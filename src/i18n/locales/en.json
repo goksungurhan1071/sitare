@@ -1,0 +1,150 @@
+{
+  "brand": {
+    "name": "SİTARE",
+    "tagline": "Defense Technologies"
+  },
+  "nav": {
+    "about": "About Us",
+    "products": "Products",
+    "whatWeDo": "What We Do",
+    "contact": "Contact"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "exploreProducts": "Explore Our Products",
+    "technicalSpecs": "Technical Specifications",
+    "material": "Material",
+    "backToTop": "Back to Top"
+  },
+  "home": {
+    "heroTitle": "Your Trusted Partner in National Defense Technology",
+    "heroSubtitle": "We develop end-to-end defense technologies, from RF and communication systems to target aircraft, anti-drone solutions and control software.",
+    "aboutTitle": "About Us",
+    "aboutBody": "Sitare Defense Technologies is an engineering-driven technology company developing electronic, mechanical, and software solutions for unmanned aerial systems and the defense industry. Our R&D team designs, manufactures, and fields domestic solutions across a wide range of disciplines, from RF and communication hardware to target aircraft platforms, anti-drone systems, and flight control software.",
+    "aboutBodySecondary": "We manage every stage in-house, from prototyping to series production, offering our customers fast, flexible, and sustainable supply capability.",
+    "missionTitle": "Our Mission",
+    "missionBody": "To contribute to our country's deterrence capacity by developing reliable, high-performance defense systems built on domestic engineering strength.",
+    "visionTitle": "Our Vision",
+    "visionBody": "To become an export-oriented defense technology company recognized as a regional reference in RF, autonomous platforms, and control software.",
+    "capabilitiesTitle": "Our Areas of Work",
+    "capabilitiesSubtitle": "Explore our four core competency areas in detail on the What We Do page.",
+    "ctaTitle": "Let's work together on your project",
+    "ctaBody": "Get in touch with us to learn more about our products and technical capabilities."
+  },
+  "whatWeDo": {
+    "title": "What We Do",
+    "subtitle": "We provide end-to-end engineering and manufacturing solutions across four core competency areas.",
+    "sections": {
+      "rf": {
+        "title": "RF & Communications",
+        "summary": "High-frequency RF design and communication boards",
+        "body": "We design multi-channel RF transceiver boards, antenna systems, and secure data link solutions for unmanned systems. Our multi-port RF modules with SMA connectors are developed to meet long-range, low-latency communication requirements.",
+        "bullets": [
+          "Multi-channel RF transceiver board design",
+          "Secure and encrypted data link solutions",
+          "Antenna and RF front-end integration",
+          "Communication resilient to electronic warfare environments"
+        ]
+      },
+      "antiDrone": {
+        "title": "Anti-Drone",
+        "summary": "Detection, tracking, and neutralization systems",
+        "body": "We develop interceptor platforms providing detection, tracking, and response capability against small UAS threats. Our multi-rotor interceptor vehicles are optimized for rapid engagement and effective response after target acquisition.",
+        "bullets": [
+          "Multi-rotor interceptor / chase platforms",
+          "Radar and RF-based detection integration",
+          "Rapid engagement and autonomous approach algorithms",
+          "Modular neutralization payloads"
+        ]
+      },
+      "targetAircraft": {
+        "title": "Target Aircraft",
+        "summary": "Target aircraft platforms for training and testing",
+        "body": "We develop fiber-reinforced composite target aircraft platforms for use in air defense training and live-fire tests. Our CK-0 and CK-1 platforms are positioned to meet different range and payload capacity requirements.",
+        "viewProducts": "See CK-0 and CK-1 technical specifications on the Products page."
+      },
+      "control": {
+        "title": "Control & Software",
+        "summary": "Flight control, autopilot, and ground control software",
+        "body": "We develop flight control computers, autopilot algorithms, and ground control station (GCS) software in-house for our autonomous platforms. We design every layer end-to-end, from real-time embedded software to the operator interface.",
+        "bullets": [
+          "Flight control computer and autopilot software",
+          "Ground control station (GCS) software",
+          "Real-time embedded system software",
+          "Sensor fusion and autonomous navigation"
+        ]
+      }
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Our field-tested and proven platforms.",
+    "ck0": {
+      "name": "CK-0 Target Aircraft",
+      "version": "Version 1",
+      "description": "Lightweight-class target aircraft platform with a fiber-reinforced ABS composite airframe.",
+      "specs": [
+        { "label": "Max Take-off Weight (MTOW)", "value": "2.5 kg" },
+        { "label": "Cruise Speed", "value": "100 km/h" },
+        { "label": "Maximum Speed", "value": "180 km/h" },
+        { "label": "Operational Range", "value": "80 km" },
+        { "label": "Length", "value": "1000 mm" },
+        { "label": "Wingspan", "value": "1560 mm" },
+        { "label": "Fuselage Width (avg.)", "value": "100 mm" },
+        { "label": "Internal Volume", "value": "7150 cm³" },
+        { "label": "Recommended Motor", "value": "3115" },
+        { "label": "Recommended Thrust", "value": "3 - 3.5 kg" },
+        { "label": "Recommended Battery", "value": "6S 7000 mAh" }
+      ],
+      "material": "Fiber-reinforced ABS plastic"
+    },
+    "ck1": {
+      "name": "CK-1 Target Aircraft",
+      "version": "Version 1",
+      "description": "Mid-class target aircraft platform offering extended range and payload capacity.",
+      "specs": [
+        { "label": "Max Take-off Weight (MTOW)", "value": "5.5 kg" },
+        { "label": "Cruise Speed", "value": "120 km/h" },
+        { "label": "Maximum Speed", "value": "180 km/h" },
+        { "label": "Operational Range", "value": "120 km" },
+        { "label": "Length", "value": "1500 mm" },
+        { "label": "Wingspan", "value": "1900 mm" },
+        { "label": "Fuselage Width (avg.)", "value": "180 mm" },
+        { "label": "Internal Volume", "value": "12,000 cm³" }
+      ]
+    },
+    "antiDrone": {
+      "name": "Anti-Drone Interceptor Platform",
+      "description": "A multi-rotor interceptor system developed for rapid response to small UAS threats. Compact and extended airframe options allow adaptation to different mission profiles."
+    },
+    "rfModule": {
+      "name": "RF Communication Board",
+      "description": "A high-frequency RF transceiver board with multiple SMA connectors. Designed for secure, low-latency data communication on unmanned platforms."
+    },
+    "requestQuote": "Request a Quote"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us for your questions and projects.",
+    "formTitle": "Write to Us",
+    "name": "Full Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send via Email",
+    "sendHint": "This button opens your default email application with your message pre-filled.",
+    "companyName": "Sitare Defense Technologies",
+    "emailLabel": "Email",
+    "emailValue": "info@sitare.com.tr",
+    "phoneLabel": "Phone",
+    "phoneValue": "+90 (5xx) xxx xx xx",
+    "addressLabel": "Address",
+    "addressValue": "Address information to be updated",
+    "placeholderNote": "Contact details are placeholders and will be updated once provided by the company."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "description": "Sitare Defense Technologies develops engineering solutions in RF, anti-drone, target aircraft, and control software."
+  }
+}

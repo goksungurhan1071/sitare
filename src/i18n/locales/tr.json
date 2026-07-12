@@ -1,0 +1,150 @@
+{
+  "brand": {
+    "name": "SİTARE",
+    "tagline": "Savunma Teknolojileri"
+  },
+  "nav": {
+    "about": "Biz Kimiz",
+    "products": "Ürünler",
+    "whatWeDo": "Neler Yapıyoruz",
+    "contact": "İletişim"
+  },
+  "common": {
+    "learnMore": "Detaylı Bilgi",
+    "contactUs": "İletişime Geçin",
+    "exploreProducts": "Ürünlerimizi İnceleyin",
+    "technicalSpecs": "Teknik Özellikler",
+    "material": "Malzeme",
+    "backToTop": "Başa Dön"
+  },
+  "home": {
+    "heroTitle": "Milli Savunma Teknolojilerinde Güvenilir Ortağınız",
+    "heroSubtitle": "RF ve haberleşme sistemlerinden hedef uçaklara, anti-drone çözümlerinden kontrol yazılımlarına kadar uçtan uca savunma teknolojileri geliştiriyoruz.",
+    "aboutTitle": "Biz Kimiz",
+    "aboutBody": "Sitare Savunma Teknolojileri, insansız hava araçları ve savunma sanayii için elektronik, mekanik ve yazılım çözümleri geliştiren mühendislik odaklı bir teknoloji şirketidir. Ar-Ge ekibimiz; RF ve haberleşme donanımlarından hedef uçak platformlarına, anti-drone sistemlerinden uçuş kontrol yazılımlarına kadar geniş bir yelpazede yerli ve milli çözümler tasarlar, üretir ve sahaya kazandırır.",
+    "aboutBodySecondary": "Prototip aşamasından seri üretime kadar tüm süreçleri kendi mühendislik kadromuzla yürütüyor; müşterilerimize hızlı, esnek ve sürdürülebilir tedarik imkânı sunuyoruz.",
+    "missionTitle": "Misyonumuz",
+    "missionBody": "Savunma sanayiinde yerli mühendislik gücüyle, güvenilir ve yüksek performanslı sistemler geliştirerek ülkemizin caydırıcılık kapasitesine katkı sağlamak.",
+    "visionTitle": "Vizyonumuz",
+    "visionBody": "RF, otonom platform ve kontrol yazılımı alanlarında bölgesinde referans gösterilen, ihracat odaklı bir savunma teknolojisi şirketi olmak.",
+    "capabilitiesTitle": "Çalışma Alanlarımız",
+    "capabilitiesSubtitle": "Neler yapıyoruz sayfamızda dört ana yetkinlik alanımızı detaylı olarak inceleyebilirsiniz.",
+    "ctaTitle": "Projeniz için birlikte çalışalım",
+    "ctaBody": "Ürünlerimiz ve teknik kapasitemiz hakkında daha fazla bilgi almak için bizimle iletişime geçin."
+  },
+  "whatWeDo": {
+    "title": "Neler Yapıyoruz",
+    "subtitle": "Dört temel yetkinlik alanında uçtan uca mühendislik ve üretim çözümleri sunuyoruz.",
+    "sections": {
+      "rf": {
+        "title": "RF ve Haberleşme",
+        "summary": "Yüksek frekanslı RF tasarım ve haberleşme kartları",
+        "body": "İnsansız sistemler için çoklu kanal RF alıcı/verici kartları, anten sistemleri ve güvenli veri linki çözümleri tasarlıyoruz. SMA konnektörlü çok portlu RF modüllerimiz, uzun menzilli ve düşük gecikmeli haberleşme ihtiyaçlarına yanıt verecek şekilde geliştirilmektedir.",
+        "bullets": [
+          "Çok kanallı RF alıcı/verici kart tasarımı",
+          "Güvenli ve şifreli veri linki çözümleri",
+          "Anten ve RF cephe (front-end) entegrasyonu",
+          "Elektronik harp ortamına dayanıklı haberleşme"
+        ]
+      },
+      "antiDrone": {
+        "title": "Anti Drone",
+        "summary": "Tespit, takip ve etkisiz hale getirme sistemleri",
+        "body": "Küçük İHA tehditlerine karşı tespit, izleme ve müdahale kabiliyeti sunan interceptor platformları geliştiriyoruz. Çok rotorlu interceptor araçlarımız, hedef tespiti sonrası hızlı intikal ve etkin müdahale için optimize edilmiştir.",
+        "bullets": [
+          "Çok rotorlu interceptor / avcı platformlar",
+          "Radar ve RF tabanlı tespit entegrasyonu",
+          "Hızlı intikal ve otonom yaklaşma algoritmaları",
+          "Modüler etkisiz hale getirme yükleri"
+        ]
+      },
+      "targetAircraft": {
+        "title": "Hedef Uçak",
+        "summary": "Eğitim ve test amaçlı hedef uçak platformları",
+        "body": "Hava savunma sistemlerinin eğitim ve atış testlerinde kullanılmak üzere, fiber takviyeli kompozit gövdeli hedef uçak platformları geliştiriyoruz. CK-0 ve CK-1 platformlarımız farklı menzil ve yük kapasitesi ihtiyaçlarına göre konumlandırılmıştır.",
+        "viewProducts": "CK-0 ve CK-1 teknik özelliklerini Ürünler sayfasında inceleyebilirsiniz."
+      },
+      "control": {
+        "title": "Control ve Software",
+        "summary": "Uçuş kontrol, otopilot ve yer kontrol yazılımları",
+        "body": "Otonom platformlarımız için uçuş kontrol bilgisayarları, otopilot algoritmaları ve yer kontrol istasyonu (YKİ) yazılımlarını kendi bünyemizde geliştiriyoruz. Gerçek zamanlı gömülü yazılımdan operatör arayüzüne kadar tüm katmanları uçtan uca tasarlıyoruz.",
+        "bullets": [
+          "Uçuş kontrol bilgisayarı ve otopilot yazılımı",
+          "Yer kontrol istasyonu (YKİ) yazılımları",
+          "Gerçek zamanlı gömülü sistem yazılımı",
+          "Sensör füzyonu ve otonom navigasyon"
+        ]
+      }
+    }
+  },
+  "products": {
+    "title": "Ürünler",
+    "subtitle": "Test edilmiş ve sahada kanıtlanmış platformlarımız.",
+    "ck0": {
+      "name": "CK-0 Hedef Uçak",
+      "version": "Versiyon 1",
+      "description": "Fiber takviyeli ABS kompozit gövdeli, hafif sınıf hedef uçak platformu.",
+      "specs": [
+        { "label": "Kalkış Ağırlığı (MTOW)", "value": "2,5 kg" },
+        { "label": "Seyir Hızı", "value": "100 km/s" },
+        { "label": "Maksimum Hız", "value": "180 km/s" },
+        { "label": "Operasyonel Menzil", "value": "80 km" },
+        { "label": "Uzunluk", "value": "1000 mm" },
+        { "label": "Kanat Açıklığı", "value": "1560 mm" },
+        { "label": "Gövde Genişliği (ort.)", "value": "100 mm" },
+        { "label": "İç Hacim", "value": "7150 cm³" },
+        { "label": "Tavsiye Edilen Motor", "value": "3115" },
+        { "label": "Tavsiye Edilen İtki", "value": "3 - 3,5 kg" },
+        { "label": "Tavsiye Edilen Batarya", "value": "6S 7000 mAh" }
+      ],
+      "material": "Fiber ile güçlendirilmiş ABS plastik"
+    },
+    "ck1": {
+      "name": "CK-1 Hedef Uçak",
+      "version": "Versiyon 1",
+      "description": "Daha uzun menzil ve yük kapasitesi sunan orta sınıf hedef uçak platformu.",
+      "specs": [
+        { "label": "Kalkış Ağırlığı (MTOW)", "value": "5,5 kg" },
+        { "label": "Seyir Hızı", "value": "120 km/s" },
+        { "label": "Maksimum Hız", "value": "180 km/s" },
+        { "label": "Operasyonel Menzil", "value": "120 km" },
+        { "label": "Uzunluk", "value": "1500 mm" },
+        { "label": "Kanat Açıklığı", "value": "1900 mm" },
+        { "label": "Gövde Genişliği (ort.)", "value": "180 mm" },
+        { "label": "İç Hacim", "value": "12.000 cm³" }
+      ]
+    },
+    "antiDrone": {
+      "name": "Anti-Drone Interceptor Platformu",
+      "description": "Küçük İHA tehditlerine hızlı müdahale için geliştirilen çok rotorlu interceptor sistemi. Kompakt ve genişletilmiş gövde seçenekleriyle farklı görev profillerine uyarlanabilir."
+    },
+    "rfModule": {
+      "name": "RF Haberleşme Kartı",
+      "description": "Çok portlu SMA konnektörlü, yüksek frekanslı RF alıcı/verici kartı. İnsansız platformlarda güvenli ve düşük gecikmeli veri iletişimi için tasarlanmıştır."
+    },
+    "requestQuote": "Teklif İsteyin"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Sorularınız ve projeleriniz için bizimle iletişime geçin.",
+    "formTitle": "Bize Yazın",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "subject": "Konu",
+    "message": "Mesajınız",
+    "send": "E-posta ile Gönder",
+    "sendHint": "Bu düğme, mesajınızla birlikte varsayılan e-posta uygulamanızı açar.",
+    "companyName": "Sitare Savunma Teknolojileri",
+    "emailLabel": "E-posta",
+    "emailValue": "info@sitare.com.tr",
+    "phoneLabel": "Telefon",
+    "phoneValue": "+90 (5xx) xxx xx xx",
+    "addressLabel": "Adres",
+    "addressValue": "Adres bilgisi güncellenecektir",
+    "placeholderNote": "İletişim bilgileri geçicidir, şirket bilgileriniz iletildiğinde güncellenecektir."
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "description": "Sitare Savunma Teknolojileri; RF, anti-drone, hedef uçak ve kontrol yazılımı alanlarında mühendislik çözümleri geliştirir."
+  }
+}

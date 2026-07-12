@@ -1,0 +1,7 @@
+Site dört sayfadan oluşacak.
+Biz kimiz, Ürünler, neler yapıyoruz, ve iletişim.
+Site türkçe ve ingilizce olmalı.
+
+Neler yapıyoruz dört farklı bölüm olsun ayrı ayrı RF ve Haberleşme, Anti Drone, Hedef Uçak, Control ve Software olacak. 
+Content klasöründeki pdf dosyasına bakarak da içerik çıkart.
+Video arka planda sürekli otomatik olarak oynasın.
