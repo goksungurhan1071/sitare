@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "SİTARE",
-    "tagline": "Savunma Teknolojileri"
+    "tagline": "Savunma ve Navigasyon Teknolojileri"
   },
   "nav": {
     "about": "Biz Kimiz",
@@ -50,13 +50,14 @@
       "antiDrone": {
         "title": "Anti Drone",
         "summary": "Tespit, takip ve etkisiz hale getirme sistemleri",
-        "body": "Küçük İHA tehditlerine karşı tespit, izleme ve müdahale kabiliyeti sunan interceptor platformları geliştiriyoruz. Çok rotorlu interceptor araçlarımız, hedef tespiti sonrası hızlı intikal ve etkin müdahale için optimize edilmiştir.",
+        "body": "Küçük İHA tehditlerine karşı tespit, izleme ve müdahale kabiliyeti sunan interceptor platformları geliştiriyoruz. Çok rotorlu interceptor araçlarımız, hedef tespiti sonrası hızlı intikal ve etkin müdahale için optimize edilmiştir. Bu alandaki amiral gemisi ürünümüz, yapay zeka destekli otonom güdüm kabiliyetine sahip HUMBARA karşı tedbir sistemidir.",
         "bullets": [
           "Çok rotorlu interceptor / avcı platformlar",
           "Radar ve RF tabanlı tespit entegrasyonu",
           "Hızlı intikal ve otonom yaklaşma algoritmaları",
           "Modüler etkisiz hale getirme yükleri"
-        ]
+        ],
+        "viewProducts": "HUMBARA karşı tedbir sistemi teknik özelliklerini Ürünler sayfasında inceleyebilirsiniz."
       },
       "targetAircraft": {
         "title": "Hedef Uçak",
@@ -67,11 +68,12 @@
       "control": {
         "title": "Control ve Software",
         "summary": "Uçuş kontrol, otopilot ve yer kontrol yazılımları",
-        "body": "Otonom platformlarımız için uçuş kontrol bilgisayarları, otopilot algoritmaları ve yer kontrol istasyonu (YKİ) yazılımlarını kendi bünyemizde geliştiriyoruz. Gerçek zamanlı gömülü yazılımdan operatör arayüzüne kadar tüm katmanları uçtan uca tasarlıyoruz.",
+        "body": "Otonom platformlarımız için uçuş kontrol bilgisayarları, otopilot algoritmaları ve yer kontrol istasyonu (YKİ) yazılımlarını kendi bünyemizde geliştiriyoruz. Gerçek zamanlı gömülü yazılımdan operatör arayüzüne kadar tüm katmanları uçtan uca tasarlıyoruz. Yüksek hassasiyetli konumlandırma ihtiyaçları için kendi RTK/GNSS navigasyon kitlerimizi tasarlıyoruz.",
         "bullets": [
           "Uçuş kontrol bilgisayarı ve otopilot yazılımı",
           "Yer kontrol istasyonu (YKİ) yazılımları",
           "Gerçek zamanlı gömülü sistem yazılımı",
+          "RTK/GNSS tabanlı santimetre seviyesinde konumlandırma",
           "Sensör füzyonu ve otonom navigasyon"
         ]
       }
@@ -118,9 +120,26 @@
       "name": "Anti-Drone Interceptor Platformu",
       "description": "Küçük İHA tehditlerine hızlı müdahale için geliştirilen çok rotorlu interceptor sistemi. Kompakt ve genişletilmiş gövde seçenekleriyle farklı görev profillerine uyarlanabilir."
     },
+    "humbara": {
+      "name": "HUMBARA Karşı Tedbir Sistemi",
+      "description": "Yapay zeka destekli otonom güdüm kabiliyetine sahip, hava ve kara tehditlerini tespit edip etkisiz hale getirebilen çok rotorlu karşı tedbir platformu. GNSS ve radar tabanlı otomatik güdüm, güdüm kamerası ile otonom hedef tanıma ve operatör kontrollü manuel angajman modlarını destekler. Sürü konseptine uygun olarak tek istasyondan eş zamanlı 4 araç kontrolü sağlar.",
+      "specs": [
+        { "label": "Uçuş Süresi", "value": "10 dk" },
+        { "label": "Maksimum Seyir Hızı", "value": "250 km/s" },
+        { "label": "Görüş Hattı (LOS) Menzili", "value": "10 km" },
+        { "label": "Faydalı Yük Kapasitesi", "value": "500 g" },
+        { "label": "Haberleşme Hızı", "value": "10 Mb/s" },
+        { "label": "RF Çıkış Gücü", "value": "10 Watt" },
+        { "label": "Eş Zamanlı Araç Kontrolü", "value": "4 hava aracı / istasyon" }
+      ]
+    },
     "rfModule": {
       "name": "RF Haberleşme Kartı",
       "description": "Çok portlu SMA konnektörlü, yüksek frekanslı RF alıcı/verici kartı. İnsansız platformlarda güvenli ve düşük gecikmeli veri iletişimi için tasarlanmıştır."
+    },
+    "rtkModule": {
+      "name": "RTK/GNSS Navigasyon Kiti",
+      "description": "u-blox ZED-F9P tabanlı çift frekanslı RTK GNSS modülü. Santimetre seviyesinde konum doğruluğu gerektiren otonom navigasyon ve hassas konumlandırma uygulamaları için tasarlanmıştır."
     },
     "requestQuote": "Teklif İsteyin"
   },
@@ -134,7 +153,7 @@
     "message": "Mesajınız",
     "send": "E-posta ile Gönder",
     "sendHint": "Bu düğme, mesajınızla birlikte varsayılan e-posta uygulamanızı açar.",
-    "companyName": "Sitare Savunma Teknolojileri",
+    "companyName": "Sitare Savunma Navigasyon Teknolojileri A.Ş.",
     "emailLabel": "E-posta",
     "emailValue": "info@sitare.com.tr",
     "phoneLabel": "Telefon",

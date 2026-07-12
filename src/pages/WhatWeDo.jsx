@@ -22,10 +22,10 @@ import MemoryIcon from '@mui/icons-material/Memory'
 import SectionHeading from '../components/SectionHeading'
 
 const sections = [
-  { key: 'rf', icon: SettingsInputAntennaIcon, image: '/media/rf-board.jpeg' },
+  { key: 'rf', icon: SettingsInputAntennaIcon, image: '/media/antenna-design.jpeg' },
   { key: 'antiDrone', icon: GppMaybeIcon, image: '/media/anti-drone-interceptor.jpeg' },
-  { key: 'targetAircraft', icon: FlightIcon, image: null },
-  { key: 'control', icon: MemoryIcon, image: null },
+  { key: 'targetAircraft', icon: FlightIcon, image: '/media/target-aircraft-field-test.jpeg' },
+  { key: 'control', icon: MemoryIcon, image: '/media/rtk-board.jpeg' },
 ]
 
 export default function WhatWeDo() {
@@ -55,7 +55,7 @@ export default function WhatWeDo() {
       </Tabs>
 
       <Grid container spacing={5} alignItems="center">
-        <Grid size={{ xs: 12, md: active.image ? 6 : 12 }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
             <Icon color="primary" fontSize="large" />
             <Typography variant="h4">{t(`whatWeDo.sections.${active.key}.title`)}</Typography>
@@ -77,10 +77,10 @@ export default function WhatWeDo() {
             </List>
           )}
 
-          {active.key === 'targetAircraft' && (
+          {(active.key === 'targetAircraft' || active.key === 'antiDrone') && (
             <Box sx={{ mt: 2 }}>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                {t('whatWeDo.sections.targetAircraft.viewProducts')}
+                {t(`whatWeDo.sections.${active.key}.viewProducts`)}
               </Typography>
               <Button component={NavLink} to="/urunler" variant="contained">
                 {t('nav.products')}

@@ -44,13 +44,21 @@ export default function Header() {
       }}
     >
       <Toolbar sx={{ maxWidth: 1200, width: '100%', mx: 'auto', px: { xs: 2, md: 3 } }}>
-        <Box component={NavLink} to="/" sx={{ display: 'flex', alignItems: 'baseline', gap: 1, textDecoration: 'none', flexGrow: 1 }}>
-          <Typography variant="h6" sx={{ color: '#EAF2F5', fontWeight: 800, letterSpacing: 2 }}>
-            {t('brand.name')}
-          </Typography>
-          <Typography variant="caption" sx={{ color: '#9FB3C0', display: { xs: 'none', sm: 'inline' } }}>
-            {t('brand.tagline')}
-          </Typography>
+        <Box component={NavLink} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1.5, textDecoration: 'none', flexGrow: 1 }}>
+          <Box
+            component="img"
+            src="/media/logo.jpeg"
+            alt={t('brand.name')}
+            sx={{ height: 40, width: 40, borderRadius: '50%', objectFit: 'cover' }}
+          />
+          <Box>
+            <Typography variant="h6" sx={{ color: '#EAF2F5', fontWeight: 800, letterSpacing: 2, lineHeight: 1.1 }}>
+              {t('brand.name')}
+            </Typography>
+            <Typography variant="caption" sx={{ color: '#9FB3C0', display: { xs: 'none', sm: 'block' }, lineHeight: 1 }}>
+              {t('brand.tagline')}
+            </Typography>
+          </Box>
         </Box>
 
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 3 }}>
@@ -75,9 +83,17 @@ export default function Header() {
 
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <Box sx={{ width: 260, height: '100%', bgcolor: 'background.default', py: 2 }} role="presentation">
-          <Typography variant="h6" sx={{ px: 2, pb: 1, fontWeight: 800, letterSpacing: 2 }}>
-            {t('brand.name')}
-          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, px: 2, pb: 1 }}>
+            <Box
+              component="img"
+              src="/media/logo.jpeg"
+              alt={t('brand.name')}
+              sx={{ height: 36, width: 36, borderRadius: '50%', objectFit: 'cover' }}
+            />
+            <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: 2 }}>
+              {t('brand.name')}
+            </Typography>
+          </Box>
           <Divider sx={{ mb: 1 }} />
           <List>
             {navItems.map((item) => (

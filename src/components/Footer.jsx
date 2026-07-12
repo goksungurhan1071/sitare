@@ -27,9 +27,17 @@ export default function Footer() {
           spacing={3}
         >
           <Box sx={{ maxWidth: 420 }}>
-            <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: 2, mb: 1 }}>
-              {t('brand.name')}
-            </Typography>
+            <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 1 }}>
+              <Box
+                component="img"
+                src="/media/logo.jpeg"
+                alt={t('brand.name')}
+                sx={{ height: 32, width: 32, borderRadius: '50%', objectFit: 'cover' }}
+              />
+              <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: 2 }}>
+                {t('brand.name')}
+              </Typography>
+            </Stack>
             <Typography variant="body2" color="text.secondary">
               {t('footer.description')}
             </Typography>

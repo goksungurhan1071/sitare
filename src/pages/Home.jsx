@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
+import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import SettingsInputAntennaIcon from '@mui/icons-material/SettingsInputAntenna'
@@ -33,8 +34,18 @@ export default function Home() {
       <HeroVideo />
 
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid size={{ xs: 12, md: 7 }}>
+        <Grid container spacing={6} alignItems="center" sx={{ mb: { xs: 6, md: 8 } }}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card>
+              <CardMedia
+                component="img"
+                image="/media/team.jpeg"
+                alt={t('home.aboutTitle')}
+                sx={{ height: { xs: 260, md: 380 }, objectFit: 'cover' }}
+              />
+            </Card>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
             <SectionHeading eyebrow={t('nav.about')} title={t('home.aboutTitle')} />
             <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
               {t('home.aboutBody')}
@@ -43,35 +54,38 @@ export default function Home() {
               {t('home.aboutBodySecondary')}
             </Typography>
           </Grid>
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Stack spacing={3}>
-              <Card sx={{ p: 3 }}>
-                <Stack direction="row" spacing={2} alignItems="flex-start">
-                  <FlagIcon color="primary" fontSize="large" />
-                  <Box>
-                    <Typography variant="h6" gutterBottom>
-                      {t('home.missionTitle')}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {t('home.missionBody')}
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Card>
-              <Card sx={{ p: 3 }}>
-                <Stack direction="row" spacing={2} alignItems="flex-start">
-                  <VisibilityIcon color="primary" fontSize="large" />
-                  <Box>
-                    <Typography variant="h6" gutterBottom>
-                      {t('home.visionTitle')}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {t('home.visionBody')}
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Card>
-            </Stack>
+        </Grid>
+
+        <Grid container spacing={3}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card sx={{ p: 3, height: '100%' }}>
+              <Stack direction="row" spacing={2} alignItems="flex-start">
+                <FlagIcon color="primary" fontSize="large" />
+                <Box>
+                  <Typography variant="h6" gutterBottom>
+                    {t('home.missionTitle')}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {t('home.missionBody')}
+                  </Typography>
+                </Box>
+              </Stack>
+            </Card>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Card sx={{ p: 3, height: '100%' }}>
+              <Stack direction="row" spacing={2} alignItems="flex-start">
+                <VisibilityIcon color="primary" fontSize="large" />
+                <Box>
+                  <Typography variant="h6" gutterBottom>
+                    {t('home.visionTitle')}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {t('home.visionBody')}
+                  </Typography>
+                </Box>
+              </Stack>
+            </Card>
           </Grid>
         </Grid>
       </Container>

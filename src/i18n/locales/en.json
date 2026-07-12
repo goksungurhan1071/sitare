@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "SİTARE",
-    "tagline": "Defense Technologies"
+    "tagline": "Defense & Navigation Technologies"
   },
   "nav": {
     "about": "About Us",
@@ -50,13 +50,14 @@
       "antiDrone": {
         "title": "Anti-Drone",
         "summary": "Detection, tracking, and neutralization systems",
-        "body": "We develop interceptor platforms providing detection, tracking, and response capability against small UAS threats. Our multi-rotor interceptor vehicles are optimized for rapid engagement and effective response after target acquisition.",
+        "body": "We develop interceptor platforms providing detection, tracking, and response capability against small UAS threats. Our multi-rotor interceptor vehicles are optimized for rapid engagement and effective response after target acquisition. Our flagship product in this domain is HUMBARA, a counter-measure system with AI-assisted autonomous guidance.",
         "bullets": [
           "Multi-rotor interceptor / chase platforms",
           "Radar and RF-based detection integration",
           "Rapid engagement and autonomous approach algorithms",
           "Modular neutralization payloads"
-        ]
+        ],
+        "viewProducts": "See HUMBARA counter-measure system technical specifications on the Products page."
       },
       "targetAircraft": {
         "title": "Target Aircraft",
@@ -67,11 +68,12 @@
       "control": {
         "title": "Control & Software",
         "summary": "Flight control, autopilot, and ground control software",
-        "body": "We develop flight control computers, autopilot algorithms, and ground control station (GCS) software in-house for our autonomous platforms. We design every layer end-to-end, from real-time embedded software to the operator interface.",
+        "body": "We develop flight control computers, autopilot algorithms, and ground control station (GCS) software in-house for our autonomous platforms. We design every layer end-to-end, from real-time embedded software to the operator interface. For high-precision positioning needs, we design our own RTK/GNSS navigation kits.",
         "bullets": [
           "Flight control computer and autopilot software",
           "Ground control station (GCS) software",
           "Real-time embedded system software",
+          "RTK/GNSS-based centimeter-level positioning",
           "Sensor fusion and autonomous navigation"
         ]
       }
@@ -118,9 +120,26 @@
       "name": "Anti-Drone Interceptor Platform",
       "description": "A multi-rotor interceptor system developed for rapid response to small UAS threats. Compact and extended airframe options allow adaptation to different mission profiles."
     },
+    "humbara": {
+      "name": "HUMBARA Counter-Measure System",
+      "description": "A multi-rotor counter-measure platform with AI-assisted autonomous guidance capable of detecting and neutralizing air and ground threats. Supports automatic GNSS and radar-based guidance, autonomous target recognition via a guidance camera, and operator-controlled manual engagement modes. Enables simultaneous control of 4 vehicles from a single station, in line with the swarm concept.",
+      "specs": [
+        { "label": "Flight Time", "value": "10 min" },
+        { "label": "Maximum Cruise Speed", "value": "250 km/h" },
+        { "label": "Line-of-Sight (LOS) Range", "value": "10 km" },
+        { "label": "Payload Capacity", "value": "500 g" },
+        { "label": "Communication Speed", "value": "10 Mb/s" },
+        { "label": "RF Output Power", "value": "10 Watt" },
+        { "label": "Simultaneous Vehicle Control", "value": "4 aircraft / station" }
+      ]
+    },
     "rfModule": {
       "name": "RF Communication Board",
       "description": "A high-frequency RF transceiver board with multiple SMA connectors. Designed for secure, low-latency data communication on unmanned platforms."
+    },
+    "rtkModule": {
+      "name": "RTK/GNSS Navigation Kit",
+      "description": "A dual-frequency RTK GNSS module based on the u-blox ZED-F9P. Designed for autonomous navigation and precision positioning applications requiring centimeter-level location accuracy."
     },
     "requestQuote": "Request a Quote"
   },
@@ -134,7 +153,7 @@
     "message": "Your Message",
     "send": "Send via Email",
     "sendHint": "This button opens your default email application with your message pre-filled.",
-    "companyName": "Sitare Defense Technologies",
+    "companyName": "Sitare Savunma Navigasyon Teknolojileri A.Ş.",
     "emailLabel": "Email",
     "emailValue": "info@sitare.com.tr",
     "phoneLabel": "Phone",

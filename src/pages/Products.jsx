@@ -11,6 +11,7 @@ import Divider from '@mui/material/Divider'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import FlightIcon from '@mui/icons-material/Flight'
+import GppMaybeIcon from '@mui/icons-material/GppMaybe'
 import SectionHeading from '../components/SectionHeading'
 
 function SpecGrid({ specs }) {
@@ -39,10 +40,11 @@ function SpecGrid({ specs }) {
   )
 }
 
-function AircraftCard({ productKey }) {
+function AircraftCard({ productKey, icon: Icon = FlightIcon, iconRotate = 45 }) {
   const { t } = useTranslation()
   const specs = t(`products.${productKey}.specs`, { returnObjects: true })
   const material = t(`products.${productKey}.material`, { defaultValue: '' })
+  const version = t(`products.${productKey}.version`, { defaultValue: '' })
 
   return (
     <Card sx={{ height: '100%' }}>
@@ -56,14 +58,14 @@ function AircraftCard({ productKey }) {
           borderBottom: '1px solid rgba(255,255,255,0.08)',
         }}
       >
-        <FlightIcon sx={{ fontSize: 72, color: 'primary.main', transform: 'rotate(45deg)' }} />
+        <Icon sx={{ fontSize: 72, color: 'primary.main', transform: `rotate(${iconRotate}deg)` }} />
       </Box>
       <CardContent sx={{ p: 3 }}>
         <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
           <Typography variant="h5" sx={{ fontWeight: 700 }}>
             {t(`products.${productKey}.name`)}
           </Typography>
-          <Chip label={t(`products.${productKey}.version`)} size="small" color="primary" variant="outlined" />
+          {version && <Chip label={version} size="small" color="primary" variant="outlined" />}
         </Stack>
         <Typography variant="body2" color="text.secondary">
           {t(`products.${productKey}.description`)}
@@ -124,7 +126,13 @@ export default function Products() {
           />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
+          <AircraftCard productKey="humbara" icon={GppMaybeIcon} iconRotate={0} />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6 }}>
           <ImageProductCard productKey="rfModule" image="/media/rf-board.jpeg" alt="RF Haberleşme Kartı" />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6 }}>
+          <ImageProductCard productKey="rtkModule" image="/media/rtk-board.jpeg" alt="RTK/GNSS Navigasyon Kiti" />
         </Grid>
       </Grid>
 
