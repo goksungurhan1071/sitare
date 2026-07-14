@@ -6,7 +6,6 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 
-const Products = lazy(() => import('./pages/Products'))
 const WhatWeDo = lazy(() => import('./pages/WhatWeDo'))
 const Contact = lazy(() => import('./pages/Contact'))
 
@@ -28,7 +27,6 @@ function App() {
         <Suspense fallback={<Box sx={{ minHeight: '60vh' }} />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/urunler" element={<Products />} />
             <Route path="/neler-yapiyoruz" element={<WhatWeDo />} />
             <Route path="/iletisim" element={<Contact />} />
           </Routes>

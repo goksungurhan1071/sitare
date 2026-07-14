@@ -5,7 +5,6 @@
   },
   "nav": {
     "about": "Biz Kimiz",
-    "products": "Ürünler",
     "whatWeDo": "Neler Yapıyoruz",
     "contact": "İletişim"
   },
@@ -15,7 +14,8 @@
     "exploreProducts": "Ürünlerimizi İnceleyin",
     "technicalSpecs": "Teknik Özellikler",
     "material": "Malzeme",
-    "backToTop": "Başa Dön"
+    "backToTop": "Başa Dön",
+    "close": "Kapat"
   },
   "home": {
     "heroTitle": "Milli Savunma Teknolojilerinde Güvenilir Ortağınız",
@@ -44,7 +44,8 @@
           "Çok kanallı RF alıcı/verici kart tasarımı",
           "Güvenli ve şifreli veri linki çözümleri",
           "Anten ve RF cephe (front-end) entegrasyonu",
-          "Elektronik harp ortamına dayanıklı haberleşme"
+          "Elektronik harp ortamına dayanıklı haberleşme",
+          "Gerçek zamanlı gömülü sistem yazılımı"
         ]
       },
       "antiDrone": {
@@ -56,32 +57,32 @@
           "Radar ve RF tabanlı tespit entegrasyonu",
           "Hızlı intikal ve otonom yaklaşma algoritmaları",
           "Modüler etkisiz hale getirme yükleri"
-        ],
-        "viewProducts": "HUMBARA karşı tedbir sistemi teknik özelliklerini Ürünler sayfasında inceleyebilirsiniz."
+        ]
       },
       "targetAircraft": {
-        "title": "Hedef Uçak",
+        "title": "Hedef, Kamikaze Platformlar",
         "summary": "Eğitim ve test amaçlı hedef uçak platformları",
-        "body": "Hava savunma sistemlerinin eğitim ve atış testlerinde kullanılmak üzere, fiber takviyeli kompozit gövdeli hedef uçak platformları geliştiriyoruz. CK-0 ve CK-1 platformlarımız farklı menzil ve yük kapasitesi ihtiyaçlarına göre konumlandırılmıştır.",
-        "viewProducts": "CK-0 ve CK-1 teknik özelliklerini Ürünler sayfasında inceleyebilirsiniz."
+        "body": "Hava savunma sistemlerinin eğitim ve atış testlerinde kullanılmak üzere, fiber takviyeli kompozit gövdeli hedef uçak platformları geliştiriyoruz. CK-0 ve CK-1 platformlarımız farklı menzil ve yük kapasitesi ihtiyaçlarına göre konumlandırılmıştır."
       },
       "control": {
-        "title": "Control ve Software",
+        "title": "Kontrol ve Yazılım",
         "summary": "Uçuş kontrol, otopilot ve yer kontrol yazılımları",
         "body": "Otonom platformlarımız için uçuş kontrol bilgisayarları, otopilot algoritmaları ve yer kontrol istasyonu (YKİ) yazılımlarını kendi bünyemizde geliştiriyoruz. Gerçek zamanlı gömülü yazılımdan operatör arayüzüne kadar tüm katmanları uçtan uca tasarlıyoruz. Yüksek hassasiyetli konumlandırma ihtiyaçları için kendi RTK/GNSS navigasyon kitlerimizi tasarlıyoruz.",
         "bullets": [
           "Uçuş kontrol bilgisayarı ve otopilot yazılımı",
           "Yer kontrol istasyonu (YKİ) yazılımları",
-          "Gerçek zamanlı gömülü sistem yazılımı",
           "RTK/GNSS tabanlı santimetre seviyesinde konumlandırma",
           "Sensör füzyonu ve otonom navigasyon"
-        ]
+        ],
+        "gallery": {
+          "architecture": "Kontrol, Güdüm ve Seyrüsefer Mimarisi",
+          "interfaceMap": "Yer Kontrol İstasyonu Arayüzü — Harita ve Telemetri",
+          "interfaceMission": "Yer Kontrol İstasyonu Arayüzü — Görev Planlama"
+        }
       }
     }
   },
   "products": {
-    "title": "Ürünler",
-    "subtitle": "Test edilmiş ve sahada kanıtlanmış platformlarımız.",
     "ck0": {
       "name": "CK-0 Hedef Uçak",
       "version": "Versiyon 1",

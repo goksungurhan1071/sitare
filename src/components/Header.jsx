@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useRef, useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -11,19 +11,28 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
+import Popper from '@mui/material/Popper'
+import Paper from '@mui/material/Paper'
+import Grow from '@mui/material/Grow'
+import MenuList from '@mui/material/MenuList'
+import MenuItem from '@mui/material/MenuItem'
 import MenuIcon from '@mui/icons-material/Menu'
 import LanguageSwitcher from './LanguageSwitcher'
 
 const navItems = [
   { key: 'about', to: '/' },
-  { key: 'products', to: '/urunler' },
   { key: 'whatWeDo', to: '/neler-yapiyoruz' },
   { key: 'contact', to: '/iletisim' },
 ]
 
+const whatWeDoSections = ['rf', 'antiDrone', 'targetAircraft', 'control']
+
 export default function Header() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
+  const [whatWeDoOpen, setWhatWeDoOpen] = useState(false)
+  const whatWeDoRef = useRef(null)
 
   const linkStyle = ({ isActive }) => ({
     color: isActive ? '#1FD1A2' : '#EAF2F5',
@@ -32,6 +41,11 @@ export default function Header() {
     fontSize: '0.95rem',
     letterSpacing: 0.3,
   })
+
+  const goToWhatWeDoSection = (key) => {
+    setWhatWeDoOpen(false)
+    navigate(`/neler-yapiyoruz?section=${key}`)
+  }
 
   return (
     <AppBar
@@ -62,11 +76,54 @@ export default function Header() {
         </Box>
 
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 3 }}>
-          {navItems.map((item) => (
-            <Box key={item.key} component={NavLink} to={item.to} style={linkStyle} end={item.to === '/'}>
-              {t(`nav.${item.key}`)}
-            </Box>
-          ))}
+          {navItems.map((item) =>
+            item.key === 'whatWeDo' ? (
+              <Box
+                key={item.key}
+                ref={whatWeDoRef}
+                sx={{ position: 'relative' }}
+                onMouseEnter={() => setWhatWeDoOpen(true)}
+                onMouseLeave={() => setWhatWeDoOpen(false)}
+              >
+                <Box component={NavLink} to={item.to} style={linkStyle}>
+                  {t(`nav.${item.key}`)}
+                </Box>
+                <Popper
+                  open={whatWeDoOpen}
+                  anchorEl={whatWeDoRef.current}
+                  disablePortal
+                  placement="bottom-start"
+                  transition
+                  sx={{ zIndex: 1301 }}
+                >
+                  {({ TransitionProps }) => (
+                    <Grow {...TransitionProps} timeout={150}>
+                      <Paper
+                        sx={{
+                          mt: 1,
+                          minWidth: 220,
+                          bgcolor: '#0F1E2E',
+                          border: '1px solid rgba(255,255,255,0.08)',
+                        }}
+                      >
+                        <MenuList dense>
+                          {whatWeDoSections.map((key) => (
+                            <MenuItem key={key} onClick={() => goToWhatWeDoSection(key)}>
+                              {t(`whatWeDo.sections.${key}.title`)}
+                            </MenuItem>
+                          ))}
+                        </MenuList>
+                      </Paper>
+                    </Grow>
+                  )}
+                </Popper>
+              </Box>
+            ) : (
+              <Box key={item.key} component={NavLink} to={item.to} style={linkStyle} end={item.to === '/'}>
+                {t(`nav.${item.key}`)}
+              </Box>
+            )
+          )}
           <LanguageSwitcher />
         </Box>
 

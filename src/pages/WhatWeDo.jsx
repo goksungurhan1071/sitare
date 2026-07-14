@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { NavLink } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -8,32 +8,199 @@ import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
-import CardMedia from '@mui/material/CardMedia'
+import CardContent from '@mui/material/CardContent'
+import Chip from '@mui/material/Chip'
+import Divider from '@mui/material/Divider'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import IconButton from '@mui/material/IconButton'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import SettingsInputAntennaIcon from '@mui/icons-material/SettingsInputAntenna'
 import GppMaybeIcon from '@mui/icons-material/GppMaybe'
 import FlightIcon from '@mui/icons-material/Flight'
 import MemoryIcon from '@mui/icons-material/Memory'
+import CloseIcon from '@mui/icons-material/Close'
+import ZoomInIcon from '@mui/icons-material/ZoomIn'
 import SectionHeading from '../components/SectionHeading'
 
 const sections = [
   { key: 'rf', icon: SettingsInputAntennaIcon, image: '/media/antenna-design.jpeg' },
-  { key: 'antiDrone', icon: GppMaybeIcon, image: '/media/anti-drone-interceptor.jpeg' },
-  { key: 'targetAircraft', icon: FlightIcon, image: '/media/target-aircraft-field-test.jpeg' },
-  { key: 'control', icon: MemoryIcon, image: '/media/rtk-board.jpeg' },
+  { key: 'antiDrone', icon: GppMaybeIcon, image: '/media/humbara-drone.png' },
+  { key: 'targetAircraft', icon: FlightIcon },
+  { key: 'control', icon: MemoryIcon },
 ]
+
+const sectionExtras = {
+  rf: {
+    products: [{ productKey: 'rfModule', images: ['/media/rf-board.jpeg'] }],
+  },
+  antiDrone: {
+    products: [
+      { productKey: 'antiDrone', images: ['/media/anti-drone-interceptor.jpeg'] },
+      {
+        productKey: 'humbara',
+        images: ['/media/humbara-drone.png', '/media/humbara-studio-photo.png', '/media/humbara-ground-station.png'],
+        specs: true,
+      },
+    ],
+  },
+  targetAircraft: {
+    products: [
+      { productKey: 'ck0', images: ['/media/ck0-render-iso.jpg', '/media/ck0-field-photo.jpg'], specs: true, material: true },
+      { productKey: 'ck1', images: ['/media/ck1-render.jpg', '/media/ck1-studio-photo.jpg'], specs: true },
+    ],
+  },
+  control: {
+    products: [{ productKey: 'rtkModule', images: ['/media/rtk-board.jpeg'] }],
+    gallery: [
+      { src: '/media/control-guidance-nav-architecture.png', labelKey: 'architecture' },
+      { src: '/media/gcs-interface-map.png', labelKey: 'interfaceMap' },
+      { src: '/media/gcs-interface-mission.png', labelKey: 'interfaceMission' },
+    ],
+  },
+}
+
+function ZoomableImage({ src, alt, height, objectFit = 'cover', bgcolor = 'transparent', onOpen, sx }) {
+  return (
+    <Box
+      onClick={() => onOpen({ src, alt })}
+      sx={{
+        position: 'relative',
+        height,
+        overflow: 'hidden',
+        cursor: 'zoom-in',
+        bgcolor,
+        '&:hover .zoomable-img': { transform: 'scale(1.08)' },
+        '&:hover .zoomable-icon': { opacity: 1 },
+        ...sx,
+      }}
+    >
+      <Box
+        component="img"
+        className="zoomable-img"
+        src={src}
+        alt={alt}
+        sx={{
+          width: '100%',
+          height: '100%',
+          objectFit,
+          display: 'block',
+          transition: 'transform 0.4s ease',
+        }}
+      />
+      <Box
+        className="zoomable-icon"
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: 'rgba(10,20,32,0.3)',
+          color: '#fff',
+          opacity: 0,
+          transition: 'opacity 0.3s ease',
+          pointerEvents: 'none',
+        }}
+      >
+        <ZoomInIcon fontSize="large" />
+      </Box>
+    </Box>
+  )
+}
+
+function ProductMedia({ images, alt, onOpen }) {
+  return (
+    <Box sx={{ display: 'flex', gap: 0.5, height: 180 }}>
+      {images.map((src) => (
+        <ZoomableImage key={src} src={src} alt={alt} height="100%" onOpen={onOpen} sx={{ flex: 1, width: 0 }} />
+      ))}
+    </Box>
+  )
+}
+
+function SpecGrid({ specs }) {
+  return (
+    <Grid container spacing={1.5} sx={{ mt: 0.5 }}>
+      {specs.map((spec) => (
+        <Grid key={spec.label} size={{ xs: 6, sm: 4 }}>
+          <Box sx={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: 2, p: 1.5, height: '100%' }}>
+            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', lineHeight: 1.3 }}>
+              {spec.label}
+            </Typography>
+            <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+              {spec.value}
+            </Typography>
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
+  )
+}
+
+function ProductCard({ productKey, images, specs, material, onOpen }) {
+  const { t } = useTranslation()
+  const specList = specs ? t(`products.${productKey}.specs`, { returnObjects: true, defaultValue: [] }) : []
+  const materialValue = material ? t(`products.${productKey}.material`, { defaultValue: '' }) : ''
+  const version = t(`products.${productKey}.version`, { defaultValue: '' })
+  const name = t(`products.${productKey}.name`)
+
+  return (
+    <Card sx={{ height: '100%' }}>
+      <ProductMedia images={images} alt={name} onOpen={onOpen} />
+      <CardContent sx={{ p: 3 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1, flexWrap: 'wrap' }}>
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            {name}
+          </Typography>
+          {version && <Chip label={version} size="small" color="primary" variant="outlined" />}
+        </Box>
+        <Typography variant="body2" color="text.secondary">
+          {t(`products.${productKey}.description`)}
+        </Typography>
+
+        {specList.length > 0 && (
+          <>
+            <Divider sx={{ my: 2 }} />
+            <Typography variant="overline" color="text.secondary">
+              {t('common.technicalSpecs')}
+            </Typography>
+            <SpecGrid specs={specList} />
+          </>
+        )}
+
+        {materialValue && (
+          <Typography variant="body2" sx={{ mt: 2 }}>
+            <strong>{t('common.material')}:</strong> {materialValue}
+          </Typography>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
 
 export default function WhatWeDo() {
   const { t } = useTranslation()
-  const [tab, setTab] = useState(0)
+  const [searchParams] = useSearchParams()
+  const [tab, setTab] = useState(() => {
+    const idx = sections.findIndex((s) => s.key === searchParams.get('section'))
+    return idx === -1 ? 0 : idx
+  })
   const active = sections[tab]
+  const [lightbox, setLightbox] = useState(null)
+
+  useEffect(() => {
+    const idx = sections.findIndex((s) => s.key === searchParams.get('section'))
+    if (idx !== -1) setTab(idx)
+  }, [searchParams])
+
   const Icon = active.icon
   const bullets = t(`whatWeDo.sections.${active.key}.bullets`, { returnObjects: true, defaultValue: [] })
+  const extras = sectionExtras[active.key]
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
@@ -54,8 +221,8 @@ export default function WhatWeDo() {
         ))}
       </Tabs>
 
-      <Grid container spacing={5} alignItems="center">
-        <Grid size={{ xs: 12, md: 6 }}>
+      <Grid container spacing={5} alignItems="center" sx={{ mb: extras ? 6 : 0 }}>
+        <Grid size={{ xs: 12, md: active.image ? 6 : 12 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
             <Icon color="primary" fontSize="large" />
             <Typography variant="h4">{t(`whatWeDo.sections.${active.key}.title`)}</Typography>
@@ -76,32 +243,95 @@ export default function WhatWeDo() {
               ))}
             </List>
           )}
-
-          {(active.key === 'targetAircraft' || active.key === 'antiDrone') && (
-            <Box sx={{ mt: 2 }}>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                {t(`whatWeDo.sections.${active.key}.viewProducts`)}
-              </Typography>
-              <Button component={NavLink} to="/urunler" variant="contained">
-                {t('nav.products')}
-              </Button>
-            </Box>
-          )}
         </Grid>
 
         {active.image && (
           <Grid size={{ xs: 12, md: 6 }}>
             <Card>
-              <CardMedia
-                component="img"
-                image={active.image}
+              <ZoomableImage
+                src={active.image}
                 alt={t(`whatWeDo.sections.${active.key}.title`)}
-                sx={{ height: { xs: 260, md: 380 }, objectFit: 'cover' }}
+                height={{ xs: 260, md: 380 }}
+                objectFit="cover"
+                onOpen={setLightbox}
               />
             </Card>
           </Grid>
         )}
       </Grid>
+
+      {extras?.gallery && (
+        <Grid container spacing={3} sx={{ mb: 6 }}>
+          {extras.gallery.map((item) => (
+            <Grid key={item.src} size={{ xs: 12, sm: 6, md: 4 }}>
+              <Card sx={{ height: '100%' }}>
+                <ZoomableImage
+                  src={item.src}
+                  alt={t(`whatWeDo.sections.control.gallery.${item.labelKey}`)}
+                  height={260}
+                  objectFit="contain"
+                  bgcolor="#fff"
+                  onOpen={setLightbox}
+                />
+                <CardContent>
+                  <Typography variant="body2" color="text.secondary">
+                    {t(`whatWeDo.sections.control.gallery.${item.labelKey}`)}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      )}
+
+      {extras?.products && (
+        <Grid container spacing={4}>
+          {extras.products.map((product) => (
+            <Grid key={product.productKey} size={{ xs: 12, md: 6 }}>
+              <ProductCard {...product} onOpen={setLightbox} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
+
+      {extras?.products && (
+        <Box sx={{ textAlign: 'center', mt: 6 }}>
+          <Button href="mailto:info@sitare.com.tr" variant="contained" size="large">
+            {t('products.requestQuote')}
+          </Button>
+        </Box>
+      )}
+
+      <Dialog
+        open={Boolean(lightbox)}
+        onClose={() => setLightbox(null)}
+        maxWidth="lg"
+        fullWidth
+        slotProps={{ paper: { sx: { bgcolor: '#0A1420', boxShadow: 'none', overflow: 'visible' } } }}
+      >
+        <IconButton
+          onClick={() => setLightbox(null)}
+          aria-label={t('common.close')}
+          sx={{
+            position: 'absolute',
+            top: -18,
+            right: -18,
+            bgcolor: 'primary.main',
+            color: '#06110D',
+            '&:hover': { bgcolor: 'primary.main', opacity: 0.9 },
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+        {lightbox && (
+          <Box
+            component="img"
+            src={lightbox.src}
+            alt={lightbox.alt}
+            sx={{ width: '100%', maxHeight: '85vh', objectFit: 'contain', display: 'block', bgcolor: '#fff' }}
+          />
+        )}
+      </Dialog>
     </Container>
   )
 }

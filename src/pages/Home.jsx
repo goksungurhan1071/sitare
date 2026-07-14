@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
-import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import SettingsInputAntennaIcon from '@mui/icons-material/SettingsInputAntenna'
@@ -17,6 +16,9 @@ import FlagIcon from '@mui/icons-material/Flag'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import HeroVideo from '../components/HeroVideo'
 import SectionHeading from '../components/SectionHeading'
+import PhotoSlideshow from '../components/PhotoSlideshow'
+
+const aboutPhotos = ['/media/team.jpeg', '/media/target-aircraft-field-test.jpeg']
 
 const capabilityIcons = {
   rf: SettingsInputAntennaIcon,
@@ -37,12 +39,7 @@ export default function Home() {
         <Grid container spacing={6} alignItems="center" sx={{ mb: { xs: 6, md: 8 } }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Card>
-              <CardMedia
-                component="img"
-                image="/media/team.jpeg"
-                alt={t('home.aboutTitle')}
-                sx={{ height: { xs: 260, md: 380 }, objectFit: 'cover' }}
-              />
+              <PhotoSlideshow images={aboutPhotos} alt={t('home.aboutTitle')} height={{ xs: 260, md: 380 }} />
             </Card>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>

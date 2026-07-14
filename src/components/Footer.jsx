@@ -8,7 +8,6 @@ import Divider from '@mui/material/Divider'
 
 const navItems = [
   { key: 'about', to: '/' },
-  { key: 'products', to: '/urunler' },
   { key: 'whatWeDo', to: '/neler-yapiyoruz' },
   { key: 'contact', to: '/iletisim' },
 ]

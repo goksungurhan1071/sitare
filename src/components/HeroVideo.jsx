@@ -69,7 +69,7 @@ export default function HeroVideo() {
             {t('home.heroSubtitle')}
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
-            <Button component={NavLink} to="/urunler" variant="contained" size="large" color="primary">
+            <Button component={NavLink} to="/neler-yapiyoruz" variant="contained" size="large" color="primary">
               {t('common.exploreProducts')}
             </Button>
             <Button

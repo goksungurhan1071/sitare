@@ -5,7 +5,6 @@
   },
   "nav": {
     "about": "About Us",
-    "products": "Products",
     "whatWeDo": "What We Do",
     "contact": "Contact"
   },
@@ -15,7 +14,8 @@
     "exploreProducts": "Explore Our Products",
     "technicalSpecs": "Technical Specifications",
     "material": "Material",
-    "backToTop": "Back to Top"
+    "backToTop": "Back to Top",
+    "close": "Close"
   },
   "home": {
     "heroTitle": "Your Trusted Partner in National Defense Technology",
@@ -44,7 +44,8 @@
           "Multi-channel RF transceiver board design",
           "Secure and encrypted data link solutions",
           "Antenna and RF front-end integration",
-          "Communication resilient to electronic warfare environments"
+          "Communication resilient to electronic warfare environments",
+          "Real-time embedded system software"
         ]
       },
       "antiDrone": {
@@ -56,14 +57,12 @@
           "Radar and RF-based detection integration",
           "Rapid engagement and autonomous approach algorithms",
           "Modular neutralization payloads"
-        ],
-        "viewProducts": "See HUMBARA counter-measure system technical specifications on the Products page."
+        ]
       },
       "targetAircraft": {
-        "title": "Target Aircraft",
+        "title": "Target & Kamikaze Platforms",
         "summary": "Target aircraft platforms for training and testing",
-        "body": "We develop fiber-reinforced composite target aircraft platforms for use in air defense training and live-fire tests. Our CK-0 and CK-1 platforms are positioned to meet different range and payload capacity requirements.",
-        "viewProducts": "See CK-0 and CK-1 technical specifications on the Products page."
+        "body": "We develop fiber-reinforced composite target aircraft platforms for use in air defense training and live-fire tests. Our CK-0 and CK-1 platforms are positioned to meet different range and payload capacity requirements."
       },
       "control": {
         "title": "Control & Software",
@@ -72,16 +71,18 @@
         "bullets": [
           "Flight control computer and autopilot software",
           "Ground control station (GCS) software",
-          "Real-time embedded system software",
           "RTK/GNSS-based centimeter-level positioning",
           "Sensor fusion and autonomous navigation"
-        ]
+        ],
+        "gallery": {
+          "architecture": "Control, Guidance & Navigation Architecture",
+          "interfaceMap": "Ground Control Station Interface — Map & Telemetry",
+          "interfaceMission": "Ground Control Station Interface — Mission Planning"
+        }
       }
     }
   },
   "products": {
-    "title": "Products",
-    "subtitle": "Our field-tested and proven platforms.",
     "ck0": {
       "name": "CK-0 Target Aircraft",
       "version": "Version 1",
