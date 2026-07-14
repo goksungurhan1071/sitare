@@ -29,21 +29,24 @@ import SectionHeading from '../components/SectionHeading'
 
 const sections = [
   { key: 'rf', icon: SettingsInputAntennaIcon, image: '/media/antenna-design.jpeg' },
-  { key: 'antiDrone', icon: GppMaybeIcon, image: '/media/humbara-drone.png' },
+  { key: 'antiDrone', icon: GppMaybeIcon, image: '/media/humbara-studio-photo.png' },
   { key: 'targetAircraft', icon: FlightIcon },
   { key: 'control', icon: MemoryIcon },
 ]
 
 const sectionExtras = {
   rf: {
-    products: [{ productKey: 'rfModule', images: ['/media/rf-board.jpeg'] }],
+    products: [
+      { productKey: 'rfModule', images: ['/media/rf-board.jpeg'] },
+      { productKey: 'rtkModule', images: ['/media/rtk-board.jpeg'] },
+    ],
   },
   antiDrone: {
     products: [
       { productKey: 'antiDrone', images: ['/media/anti-drone-interceptor.jpeg'] },
       {
         productKey: 'humbara',
-        images: ['/media/humbara-drone.png', '/media/humbara-studio-photo.png', '/media/humbara-ground-station.png'],
+        images: ['/media/humbara-ground-station.png'],
         specs: true,
       },
     ],
@@ -55,7 +58,6 @@ const sectionExtras = {
     ],
   },
   control: {
-    products: [{ productKey: 'rtkModule', images: ['/media/rtk-board.jpeg'] }],
     gallery: [
       { src: '/media/control-guidance-nav-architecture.png', labelKey: 'architecture' },
       { src: '/media/gcs-interface-map.png', labelKey: 'interfaceMap' },
