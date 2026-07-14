@@ -36,18 +36,16 @@ const sections = [
 
 const sectionExtras = {
   rf: {
-    products: [
-      { productKey: 'rfModule', images: ['/media/rf-board.jpeg'] },
-      { productKey: 'rtkModule', images: ['/media/rtk-board.jpeg'] },
-    ],
+    products: [{ productKey: 'rtkModule', images: ['/media/rtk-board.jpeg'] }],
   },
   antiDrone: {
     products: [
-      { productKey: 'antiDrone', images: ['/media/anti-drone-interceptor.jpeg'] },
+      { productKey: 'antiDrone', images: ['/media/anti-drone-interceptor.jpeg'], mediaHeight: 320 },
       {
         productKey: 'humbara',
         images: ['/media/humbara-ground-station.png'],
         specs: true,
+        mediaHeight: 320,
       },
     ],
   },
@@ -66,7 +64,7 @@ const sectionExtras = {
   },
 }
 
-function ZoomableImage({ src, alt, height, objectFit = 'cover', bgcolor = 'transparent', onOpen, sx }) {
+function ZoomableImage({ src, alt, height, objectFit = 'contain', bgcolor = '#0F1D2E', onOpen, sx }) {
   return (
     <Box
       onClick={() => onOpen({ src, alt })}
@@ -115,9 +113,9 @@ function ZoomableImage({ src, alt, height, objectFit = 'cover', bgcolor = 'trans
   )
 }
 
-function ProductMedia({ images, alt, onOpen }) {
+function ProductMedia({ images, alt, onOpen, height = 240 }) {
   return (
-    <Box sx={{ display: 'flex', gap: 0.5, height: 180 }}>
+    <Box sx={{ display: 'flex', gap: 0.5, height }}>
       {images.map((src) => (
         <ZoomableImage key={src} src={src} alt={alt} height="100%" onOpen={onOpen} sx={{ flex: 1, width: 0 }} />
       ))}
@@ -144,7 +142,7 @@ function SpecGrid({ specs }) {
   )
 }
 
-function ProductCard({ productKey, images, specs, material, onOpen }) {
+function ProductCard({ productKey, images, specs, material, onOpen, mediaHeight }) {
   const { t } = useTranslation()
   const specList = specs ? t(`products.${productKey}.specs`, { returnObjects: true, defaultValue: [] }) : []
   const materialValue = material ? t(`products.${productKey}.material`, { defaultValue: '' }) : ''
@@ -153,7 +151,7 @@ function ProductCard({ productKey, images, specs, material, onOpen }) {
 
   return (
     <Card sx={{ height: '100%' }}>
-      <ProductMedia images={images} alt={name} onOpen={onOpen} />
+      <ProductMedia images={images} alt={name} onOpen={onOpen} height={mediaHeight} />
       <CardContent sx={{ p: 3 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1, flexWrap: 'wrap' }}>
           <Typography variant="h6" sx={{ fontWeight: 700 }}>
@@ -254,7 +252,6 @@ export default function WhatWeDo() {
                 src={active.image}
                 alt={t(`whatWeDo.sections.${active.key}.title`)}
                 height={{ xs: 260, md: 380 }}
-                objectFit="cover"
                 onOpen={setLightbox}
               />
             </Card>
