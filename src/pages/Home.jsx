@@ -18,7 +18,10 @@ import HeroVideo from '../components/HeroVideo'
 import SectionHeading from '../components/SectionHeading'
 import PhotoSlideshow from '../components/PhotoSlideshow'
 
-const aboutPhotos = ['/media/team.jpeg', '/media/target-aircraft-field-test.jpeg']
+const aboutPhotos = [
+  '/media/team.jpeg',
+  { src: '/media/target-aircraft-field-test.jpeg', fit: 'contain' },
+]
 
 const capabilityIcons = {
   rf: SettingsInputAntennaIcon,
