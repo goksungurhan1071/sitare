@@ -33,7 +33,7 @@ export default function Footer() {
                 alt={t('brand.name')}
                 sx={{ height: 32, width: 32, borderRadius: '50%', objectFit: 'cover' }}
               />
-              <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: 2 }}>
+              <Typography sx={{ fontWeight: 800, letterSpacing: 0.4, fontSize: '0.95rem', lineHeight: 1.2 }}>
                 {t('brand.name')}
               </Typography>
             </Stack>

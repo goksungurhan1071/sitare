@@ -65,14 +65,18 @@ export default function Header() {
             alt={t('brand.name')}
             sx={{ height: 40, width: 40, borderRadius: '50%', objectFit: 'cover' }}
           />
-          <Box>
-            <Typography variant="h6" sx={{ color: '#EAF2F5', fontWeight: 800, letterSpacing: 2, lineHeight: 1.1 }}>
-              {t('brand.name')}
-            </Typography>
-            <Typography variant="caption" sx={{ color: '#9FB3C0', display: { xs: 'none', sm: 'block' }, lineHeight: 1 }}>
-              {t('brand.tagline')}
-            </Typography>
-          </Box>
+          <Typography
+            sx={{
+              color: '#EAF2F5',
+              fontWeight: 800,
+              letterSpacing: 0.4,
+              lineHeight: 1.15,
+              fontSize: { xs: '0.85rem', sm: '0.95rem' },
+              maxWidth: { xs: 170, sm: 'none' },
+            }}
+          >
+            {t('brand.name')}
+          </Typography>
         </Box>
 
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 3 }}>
@@ -147,7 +151,7 @@ export default function Header() {
               alt={t('brand.name')}
               sx={{ height: 36, width: 36, borderRadius: '50%', objectFit: 'cover' }}
             />
-            <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: 2 }}>
+            <Typography sx={{ fontWeight: 800, letterSpacing: 0.4, fontSize: '0.9rem', lineHeight: 1.2 }}>
               {t('brand.name')}
             </Typography>
           </Box>
