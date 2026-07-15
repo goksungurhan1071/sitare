@@ -8,14 +8,13 @@ import Card from '@mui/material/Card'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import Alert from '@mui/material/Alert'
 import EmailIcon from '@mui/icons-material/Email'
 import PhoneIcon from '@mui/icons-material/Phone'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import SendIcon from '@mui/icons-material/Send'
 import SectionHeading from '../components/SectionHeading'
 
-const CONTACT_EMAIL = 'info@sitare.com.tr'
+const CONTACT_EMAIL = 'bilgi@sitaresavunma.com'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -76,10 +75,6 @@ export default function Contact() {
                 </Card>
               )
             })}
-
-            <Alert severity="info" variant="outlined">
-              {t('contact.placeholderNote')}
-            </Alert>
           </Stack>
         </Grid>
 

@@ -20,6 +20,8 @@ import PhotoSlideshow from '../components/PhotoSlideshow'
 
 const aboutPhotos = [
   '/media/team.jpeg',
+  '/media/takim2.jpeg',
+  '/media/takim3.jpeg',
   { src: '/media/target-aircraft-field-test.jpeg', fit: 'contain' },
 ]
 

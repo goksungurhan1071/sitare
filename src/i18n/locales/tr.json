@@ -155,12 +155,11 @@
     "sendHint": "Bu düğme, mesajınızla birlikte varsayılan e-posta uygulamanızı açar.",
     "companyName": "Sitare Savunma Navigasyon Teknolojileri A.Ş.",
     "emailLabel": "E-posta",
-    "emailValue": "info@sitare.com.tr",
+    "emailValue": "bilgi@sitaresavunma.com",
     "phoneLabel": "Telefon",
-    "phoneValue": "+90 (5xx) xxx xx xx",
+    "phoneValue": "+90 531 768 53 06",
     "addressLabel": "Adres",
-    "addressValue": "Adres bilgisi güncellenecektir",
-    "placeholderNote": "İletişim bilgileri geçicidir, şirket bilgileriniz iletildiğinde güncellenecektir."
+    "addressValue": "Aksu Mahallesi Yurt Sokak no:165/71-72 Samsun Teknopark Atakum/SAMSUN"
   },
   "footer": {
     "rights": "Tüm hakları saklıdır.",
